@@ -1,0 +1,589 @@
+<!doctype html><html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NCA Grading — National Card Authenticator</title><style>
+:root{--b:#1674ff;--b2:#65a5ff;--bg:#020305;--p:#090d13;--line:#1c2634;--muted:#8f9bad;--gold:#e4bd5a}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(900px 500px at 75% -10%,#0a2d63 0,transparent 60%),#020305;color:#fff;font:15px/1.6 Inter,Arial,sans-serif}header{height:82px;display:flex;align-items:center;justify-content:space-between;padding:0 6vw;border-bottom:1px solid #121923;background:#020305e8;backdrop-filter:blur(18px);position:sticky;top:0;z-index:20}header img{width:150px;filter:invert(1) grayscale(1) brightness(3)}nav a{color:#9ca8b8;text-decoration:none;margin-left:28px;font-size:13px;font-weight:700}nav a:hover{color:#fff}.hero{padding:110px 6vw 150px;text-align:center;position:relative;overflow:hidden}.hero:before{content:"";position:absolute;width:600px;height:600px;background:#1265e817;filter:blur(60px);border-radius:50%;left:50%;top:-250px;transform:translateX(-50%)}.eyebrow{color:#65a5ff;font-size:11px;font-weight:900;letter-spacing:.22em;text-transform:uppercase}.hero h1{font-size:clamp(48px,7vw,92px);line-height:.95;letter-spacing:-.055em;margin:18px auto 24px;max-width:1000px}.hero h1 span{background:linear-gradient(90deg,#fff,#65a5ff);-webkit-background-clip:text;color:transparent}.hero>div>p{max-width:760px;margin:0 auto 34px;color:#9aa6b6;font-size:17px}.search{width:min(760px,90vw);margin:auto;display:flex;padding:7px 14px 7px 7px;gap:8px;border:1px solid #28384f;background:#080c12;border-radius:16px;box-shadow:0 25px 100px #000,0 0 35px #1674ff17}.search input{flex:1;background:transparent;border:0;outline:0;color:#fff;padding:17px;font-size:17px}.search button{border:0;border-radius:11px;padding:0 24px;min-width:128px;margin-right:2px;background:linear-gradient(135deg,#1265e8,#1685ff);color:#fff;font-weight:900;cursor:pointer}.trust{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:22px}.trust span{border:1px solid #192638;background:#070b11;color:#a7b4c5;padding:8px 12px;border-radius:9px;font-size:11px}.result{width:min(1180px,92vw);margin:-80px auto 100px;display:none}.cert{border:1px solid #245fae;border-radius:24px;background:linear-gradient(145deg,#0e151f,#05070a);box-shadow:0 30px 120px #000,0 0 50px #1265e81c;overflow:hidden}.certHead{padding:26px 30px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #1b2736}.verified{color:#6ea9ff;font-size:11px;letter-spacing:.16em;font-weight:900}.serial{font-size:12px;color:#7e8b9d;letter-spacing:.12em}.bigGrade{text-align:right;font-size:54px;font-weight:950;line-height:.85}.bigGrade small{display:block;color:#70a8ff;font-size:11px;letter-spacing:.16em;margin-top:10px}.certBody{display:grid;grid-template-columns:420px 1fr;gap:34px;padding:32px}.visual{background:transparent;border:0;border-radius:0;padding:0}.tabs{display:flex;gap:8px;margin-bottom:16px}.tabs button{flex:1;padding:10px;border-radius:9px;border:1px solid #253247;background:#0b111a;color:#9caabd;font-weight:800;cursor:pointer}.tabs button.active{border-color:#1674ff;color:#fff;background:#0c2445}.cardPhoto{width:min(100%,355px);margin:0 auto;display:flex;justify-content:center;background:transparent;border:0;padding:0;overflow:visible}.cardPhoto img{display:block;width:100%;height:auto;object-fit:contain;border:0;border-radius:14px;transform:none;filter:none}.details h2{font-size:38px;line-height:1.05;margin:7px 0 4px;letter-spacing:-.035em}.blue{color:#67a6ff}.chips{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}.chip{padding:7px 10px;border:1px solid #233248;border-radius:8px;background:#0a1018;color:#b5c1d1;font-size:11px;font-weight:800}.gridInfo{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:18px 0}.info,.sub,.pop{border:1px solid #1c293a;background:#080d14;border-radius:12px;padding:13px}.info span,.sub span,.pop span{display:block;color:#748196;font-size:10px;letter-spacing:.12em;text-transform:uppercase}.info b{font-size:14px}.subs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:18px 0}.sub b{font-size:25px}.sectionTitle{font-size:11px;letter-spacing:.17em;color:#5e9fff;font-weight:900;margin:24px 0 7px}.details p{color:#9aa6b5;margin:0}.population{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}.pop b{font-size:22px}.pop.gold{border-color:#6b5625}.pop.gold b{color:#e8c461}.registry{margin-top:16px;padding:14px;border-left:2px solid #1674ff;background:#07101c;color:#9eabba;font-size:12px}.about{max-width:1180px;margin:auto;padding:100px 5vw;border-top:1px solid #111923}.about h2{font-size:clamp(36px,5vw,58px);letter-spacing:-.04em;margin:10px 0 18px}.lead{font-size:18px!important;max-width:850px}.about p{color:#929eae;max-width:900px}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:36px 0 70px}.feature{padding:25px;border:1px solid #1a2432;background:#070a0f;border-radius:16px}.feature b{font-size:17px}.feature p{font-size:13px}.scale{display:flex;gap:7px;flex-wrap:wrap;margin-top:25px}.scale span{padding:11px 14px;border:1px solid #222e3e;background:#090e15;border-radius:9px;font-weight:900}.scale .perfect{color:#efd174;border-color:#78612c}.scale .gem{color:#79adff;border-color:#205da9}.error{padding:40px}footer{border-top:1px solid #111923;color:#5f6b7b;text-align:center;padding:35px}@media(max-width:900px){nav{display:none}.certBody{grid-template-columns:1fr}.visual{max-width:460px;margin:auto;width:100%}.subs,.population{grid-template-columns:1fr 1fr}.features{grid-template-columns:1fr}}@media(max-width:520px){.hero{padding-top:80px}.search{width:92vw;padding-right:8px}.search input{min-width:0;padding:14px 10px}.search button{padding:0 12px;min-width:104px;font-size:11px}.certBody{padding:18px}.cardPhoto{width:min(100%,320px)}.details h2{font-size:31px}.gridInfo{grid-template-columns:1fr}}
+
+.cardPhoto.backOnly{width:min(100%,355px);aspect-ratio:63/88;display:flex;align-items:center;justify-content:center;overflow:hidden;background:transparent;border:0;border-radius:14px}
+.cardPhoto.backOnly img{display:block!important;position:static!important;width:100%!important;height:100%!important;max-width:100%!important;object-fit:cover!important;object-position:center!important;margin:0!important;transform:none!important;filter:none!important;opacity:1!important;visibility:visible!important}
+
+.cardPhoto.backOnly{width:min(100%,355px);aspect-ratio:63/88;display:flex;align-items:center;justify-content:center;overflow:hidden;background:transparent;border:0;border-radius:14px}
+.cardPhoto.backOnly img{display:block!important;position:static!important;width:100%!important;height:100%!important;max-width:100%!important;object-fit:cover!important;object-position:center!important;margin:0!important;transform:none!important;filter:none!important;opacity:1!important;visibility:visible!important}
+
+.cardPhoto{width:min(100%,355px);aspect-ratio:63/88;display:flex;align-items:center;justify-content:center;
+overflow:hidden;background:#fff;border:0;border-radius:14px;padding:14px;box-sizing:border-box}
+.cardPhoto img{display:block!important;position:static!important;width:100%!important;height:100%!important;
+max-width:100%!important;object-fit:contain!important;object-position:center!important;border:0!important;
+border-radius:10px!important;margin:0!important;transform:none!important;filter:none!important}
+.cardPhoto.backOnly{width:min(100%,355px);aspect-ratio:63/88;display:flex;align-items:center;justify-content:center;
+overflow:hidden;background:#fff;border:0;border-radius:14px;padding:14px;box-sizing:border-box}
+.cardPhoto.backOnly img{display:block!important;position:static!important;width:100%!important;height:100%!important;
+max-width:100%!important;object-fit:contain!important;object-position:center!important;border:0!important;
+border-radius:10px!important;margin:0!important;transform:none!important;filter:none!important}
+
+
+.cardPhoto,.cardPhoto.backOnly{
+width:min(100%,355px)!important;
+aspect-ratio:63/88!important;
+display:block!important;
+position:relative!important;
+overflow:hidden!important;
+padding:0!important;
+margin-left:auto!important;
+margin-right:auto!important;
+background:transparent!important;
+border:0!important;
+border-radius:14px!important;
+box-shadow:none!important
+}
+.cardPhoto img,.cardPhoto.backOnly img{
+display:block!important;
+position:absolute!important;
+inset:0!important;
+width:100%!important;
+height:100%!important;
+max-width:none!important;
+object-fit:cover!important;
+object-position:center!important;
+padding:0!important;
+margin:0!important;
+border:0!important;
+border-radius:14px!important;
+background:transparent!important;
+transform:none!important;
+filter:none!important;
+opacity:1!important;
+visibility:visible!important
+}
+
+
+.cardPhoto,.cardPhoto.backOnly{
+width:min(100%,355px)!important;height:auto!important;aspect-ratio:auto!important;
+display:flex!important;align-items:center!important;justify-content:center!important;
+overflow:visible!important;padding:0!important;background:transparent!important;
+border:0!important;border-radius:0!important;box-shadow:none!important
+}
+.cardPhoto img,.cardPhoto.backOnly img{
+display:block!important;position:static!important;width:100%!important;height:auto!important;
+max-width:100%!important;object-fit:contain!important;object-position:center!important;
+padding:0!important;margin:0!important;border:0!important;border-radius:14px!important;
+background:transparent!important;transform:none!important;filter:none!important
+}
+
+
+/* NCA — additional premium sections */
+.ncaExtras{padding:70px 0 90px}
+.extraTitle{font-size:clamp(30px,5vw,48px);margin:0 0 12px}
+.extraLead{color:#929eae;max-width:720px;line-height:1.7;margin:0 0 30px}
+.featureGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0 54px}
+.featureCard{padding:24px;border:1px solid #1b2d43;border-radius:18px;background:linear-gradient(145deg,#0b1420,#070c12)}
+.featureIcon{width:42px;height:42px;border:1px solid #287fff;border-radius:12px;display:grid;place-items:center;color:#6aa8ff;font-weight:900;margin-bottom:18px}
+.featureCard h3{margin:0 0 9px;font-size:18px}.featureCard p{margin:0;color:#8f9cad;line-height:1.6;font-size:14px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:25px 0 55px}
+.step{position:relative;padding:25px;border-top:1px solid #26384d;background:#080e16;border-radius:0 0 16px 16px}
+.stepNo{font-size:12px;letter-spacing:2px;color:#62a3ff;font-weight:900}.step h3{margin:9px 0}.step p{color:#8f9cad;line-height:1.55;margin:0}
+.contactBox{display:flex;align-items:center;justify-content:space-between;gap:25px;padding:30px;border:1px solid rgba(45,126,255,.5);border-radius:22px;background:radial-gradient(circle at 85% 20%,rgba(32,112,255,.16),transparent 40%),#09111c}
+.contactBox h2{margin:0 0 8px;font-size:28px}.contactBox p{margin:0;color:#929eae}
+.contactActions{display:flex;gap:10px;flex-wrap:wrap}.contactBtn{display:inline-flex;align-items:center;justify-content:center;padding:14px 20px;border-radius:12px;text-decoration:none;font-weight:800;white-space:nowrap}
+.contactPrimary{background:#1670ff;color:white}.contactSecondary{border:1px solid #263c58;color:#dce8f8;background:#0a121d}
+.ncaStatus{display:inline-flex;align-items:center;gap:8px;margin-top:13px;font-size:12px;color:#7e8d9f}.statusDot{width:8px;height:8px;border-radius:50%;background:#3b92ff;box-shadow:0 0 14px #3b92ff}
+@media(max-width:760px){.featureGrid,.steps{grid-template-columns:1fr}.contactBox{align-items:flex-start;flex-direction:column}.contactActions{width:100%}.contactBtn{flex:1}.ncaExtras{padding-top:50px}}
+
+
+/* Layout polish */
+.ncaExtras .wrap{max-width:1080px;margin:0 auto;padding-left:28px;padding-right:28px}
+.ncaExtras>.wrap>.eyebrow,.ncaExtras>.wrap>.extraTitle,.ncaExtras>.wrap>.extraLead{text-align:center}
+.ncaExtras>.wrap>.extraLead{margin-left:auto;margin-right:auto}
+.featureGrid{max-width:940px;margin-left:auto!important;margin-right:auto!important}
+.featureCard{text-align:center}
+.featureIcon{margin-left:auto!important;margin-right:auto!important}
+
+/* NCA wordmark: blue A */
+.ncaWordmark{font-weight:950;letter-spacing:3px;color:#fff;text-decoration:none;font-size:22px}
+.ncaWordmark .ncaA{color:#62a3ff}
+
+/* Mobile hamburger */
+.ncaTopActions{display:flex;align-items:center;gap:14px}
+.ncaMenuBtn{width:46px;height:42px;border:1px solid #20344e;border-radius:12px;background:#08111c;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;cursor:pointer}
+.ncaMenuBtn span{width:20px;height:2px;background:#dce8f8;border-radius:10px;transition:.2s}
+.ncaMenuBtn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.ncaMenuBtn.open span:nth-child(2){opacity:0}
+.ncaMenuBtn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.ncaDrawer{position:fixed;top:0;right:-330px;width:min(84vw,320px);height:100vh;z-index:9999;padding:88px 22px 28px;background:rgba(5,11,18,.98);border-left:1px solid #1d3149;box-shadow:-30px 0 70px rgba(0,0,0,.35);transition:right .25s ease}
+.ncaDrawer.open{right:0}.ncaDrawer a{display:block;padding:15px 14px;margin:5px 0;border-radius:11px;color:#dbe8f8;text-decoration:none;font-weight:800;border:1px solid transparent}
+.ncaDrawer a:hover{background:#0c1826;border-color:#1e3b5e;color:#72adff}
+.drawerLabel{font-size:11px;letter-spacing:2.4px;color:#5f91cf;font-weight:900;margin:0 0 14px 14px}
+.ncaOverlay{position:fixed;inset:0;background:rgba(0,0,0,.58);z-index:9998;opacity:0;pointer-events:none;transition:.2s}.ncaOverlay.open{opacity:1;pointer-events:auto}
+html{scroll-behavior:smooth}
+@media(max-width:620px){.ncaExtras .wrap{padding-left:20px;padding-right:20px}.featureGrid{width:calc(100% - 8px)}}
+
+
+header img{filter:drop-shadow(0 0 7px rgba(98,163,255,.22))}
+
+/* Certificate polish */
+#result:not(:empty){animation:ncaReveal .48s cubic-bezier(.2,.8,.2,1)}
+@keyframes ncaReveal{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.popPolish{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:15px}
+.popPolish>div{text-align:center;padding:15px 8px;border:1px solid #1d3148;border-radius:14px;background:#080f18}
+.popPolish b{display:block;font-size:25px;color:#eef6ff;margin-bottom:4px}
+.popPolish span{font-size:10px;letter-spacing:1.5px;color:#718399;font-weight:900}
+.shareNca{margin-top:16px;width:100%;padding:14px 18px;border:1px solid #275f9f;border-radius:12px;background:#0a1726;color:#dcecff;font-weight:900;letter-spacing:.5px;cursor:pointer}
+.shareNca:hover{background:#0d2035}
+.faqNca{max-width:900px;margin:70px auto 10px;padding:0 24px}
+.faqNca h2{text-align:center;font-size:clamp(30px,5vw,44px);margin-bottom:10px}
+.faqNca>p{text-align:center;color:#8795a7;margin:0 auto 25px}
+.faqNca details{border-bottom:1px solid #1c2d42;padding:0}
+.faqNca summary{cursor:pointer;list-style:none;padding:20px 4px;font-weight:850;color:#e8f1fb}
+.faqNca summary::-webkit-details-marker{display:none}
+.faqNca summary:after{content:'+';float:right;color:#67a8ff;font-size:22px}
+.faqNca details[open] summary:after{content:'–'}
+.faqNca details p{color:#8f9cad;line-height:1.65;padding:0 4px 20px;margin:0}
+@media(max-width:560px){.popPolish{gap:7px}.popPolish>div{padding:13px 4px}.popPolish b{font-size:21px}}
+
+
+/* Grade label colors */
+.gradePerfectGold{
+  color:#ffd86a!important;
+  border-color:#8f6a16!important;
+  background:linear-gradient(135deg,rgba(130,91,8,.28),rgba(255,205,75,.08))!important;
+  box-shadow:0 0 22px rgba(255,196,45,.16)!important
+}
+.gradeTenBlue{
+  color:#8fc2ff!important;
+  border-color:#285f9f!important;
+  background:linear-gradient(135deg,rgba(21,76,135,.28),rgba(72,151,255,.07))!important;
+  box-shadow:0 0 22px rgba(63,145,255,.14)!important
+}
+
+
+/* Glow ramki raportu zależny od oceny */
+#result.ncaReportGlowBlue{
+  border:1px solid rgba(74,154,255,.75)!important;
+  border-radius:20px;
+  box-shadow:0 0 18px rgba(65,151,255,.42),0 0 45px rgba(65,151,255,.16)!important;
+}
+#result.ncaReportGlowGold{
+  border:1px solid rgba(255,205,76,.88)!important;
+  border-radius:20px;
+  box-shadow:0 0 20px rgba(255,198,55,.48),0 0 52px rgba(255,174,24,.19)!important;
+}
+
+.sendCardNca{max-width:1100px;margin:72px auto 26px;padding:0 22px}.sendHead{text-align:center;max-width:760px;margin:auto}.sendHead h2{font-size:clamp(32px,5vw,48px);margin:8px 0}.sendLead,.sendNote{color:#8998aa;line-height:1.65}.sendBenefits{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:25px 0}.sendBenefits>div,.sendFormCard{background:#080f18;border:1px solid #1c2e43;border-radius:16px;padding:20px}.sendBenefits b{display:block;margin-bottom:7px}.sendBenefits span{color:#8291a4;font-size:14px}.gradeCta{display:inline-flex;margin-top:12px;padding:14px 20px;border-radius:12px;background:#1477e8;color:white;text-decoration:none;font-weight:900}.sendGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.sendGrid .full{grid-column:1/-1}.sendFormCard label{display:block;font-size:11px;font-weight:850;color:#8fa1b6;margin-bottom:6px}.sendFormCard input,.sendFormCard select,.sendFormCard textarea{width:100%;box-sizing:border-box;padding:13px 12px;border-radius:10px;border:1px solid #24394f;background:#050b12;color:#eaf3ff}.sendFormCard textarea{min-height:90px}.shipChoices{display:grid;grid-template-columns:1fr 1fr;gap:10px}.shipChoice{border:1px solid #253b53;border-radius:12px;padding:14px;background:#070d15}.shipChoice input{width:auto}.receiverBox{margin-top:15px;padding:15px;border-radius:12px;background:#071524;border:1px solid #245a91;color:#cfe5ff;line-height:1.6}.submitSend{width:100%;margin-top:16px;padding:15px;border:0;border-radius:12px;background:#1477e8;color:#fff;font-weight:950}.sendSuccess{display:none;margin-top:15px;padding:15px;border-radius:12px;border:1px solid #285e95;background:#071727;color:#cfe7ff;line-height:1.6}@media(max-width:700px){.sendBenefits,.sendGrid,.shipChoices{grid-template-columns:1fr}.sendGrid .full{grid-column:auto}}
+
+.sendLanding{width:100%;box-sizing:border-box;margin:80px 0 30px;padding:72px clamp(22px,6vw,90px);border-top:1px solid #17283b;border-bottom:1px solid #17283b;background:linear-gradient(180deg,#05090e,#07111c)}
+.sendLandingInner{width:100%;max-width:1500px;margin:auto;text-align:center}
+.sendLanding h2{font-size:clamp(38px,6vw,72px);margin:10px 0 18px}
+.sendLandingLead{max-width:980px;margin:0 auto;color:#91a0b2;font-size:clamp(16px,2vw,20px);line-height:1.75}
+.sendWhy{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:38px 0}
+.sendWhy>div{padding:28px;border:1px solid #1d3249;border-radius:18px;background:#080f18;text-align:left}
+.sendWhy b{display:block;font-size:18px;margin-bottom:9px;color:#f1f7ff}.sendWhy span{color:#8797aa;line-height:1.6}
+.sendPageBtn{padding:17px 28px;border:0;border-radius:13px;background:#1477e8;color:#fff;font-weight:950;font-size:15px;cursor:pointer;box-shadow:0 0 28px rgba(50,140,255,.2)}
+#ncaSubmissionPage{display:none;position:fixed;inset:0;z-index:99999;overflow:auto;background:#03070c;color:#edf6ff}
+#ncaSubmissionPage.open{display:block}
+.subPageTop{position:sticky;top:0;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:20px clamp(20px,5vw,70px);background:rgba(3,7,12,.95);border-bottom:1px solid #17283b;backdrop-filter:blur(12px)}
+.subPageBrand{font-size:24px;font-weight:950;letter-spacing:3px}.subPageBrand strong{color:#65a5ff}
+.subBack{border:1px solid #29435f;background:#07111c;color:#dcecff;border-radius:11px;padding:11px 15px;font-weight:850;cursor:pointer}
+.subPageBody{width:100%;max-width:1500px;margin:auto;padding:55px clamp(22px,6vw,90px) 80px;box-sizing:border-box}
+.subPageBody h1{font-size:clamp(38px,6vw,68px);margin:0 0 12px}.subIntro{color:#8e9daf;font-size:18px;line-height:1.65;max-width:850px;margin-bottom:35px}
+.subForm{border:1px solid #1b3046;border-radius:20px;background:#07101a;padding:clamp(20px,4vw,42px)}
+.subForm h3{font-size:23px;margin:0 0 22px}.subGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.subGrid .full{grid-column:1/-1}
+.subForm label{display:block;font-size:11px;font-weight:900;letter-spacing:.8px;color:#8ea2b9;margin-bottom:7px}
+.subForm input,.subForm select,.subForm textarea{width:100%;box-sizing:border-box;padding:15px;border:1px solid #263d55;border-radius:11px;background:#030910;color:#eef7ff;font-size:15px}.subForm textarea{min-height:110px;resize:vertical}
+.subShipping{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:10px}.subShip{padding:18px;border:1px solid #29435d;border-radius:13px;background:#050c14}.subShip input{width:auto;margin-right:8px}
+.subReceiver{margin-top:18px;padding:18px;border:1px solid #245b92;border-radius:13px;background:#061729;color:#d4e9ff;line-height:1.7}
+.subSubmit{width:100%;margin-top:22px;padding:17px;border:0;border-radius:12px;background:#1477e8;color:#fff;font-size:15px;font-weight:950;cursor:pointer}.subResult{display:none;margin-top:16px;padding:17px;border:1px solid #28639f;border-radius:12px;background:#071a2d;color:#d5eaff}
+@media(max-width:720px){.sendWhy,.subGrid,.subShipping{grid-template-columns:1fr}.subGrid .full{grid-column:auto}.sendLanding{padding-top:50px;padding-bottom:50px}.subPageBody{padding-top:38px}}
+
+#ncaSubmissionSuccess{display:none;position:fixed;inset:0;z-index:100000;background:#03070c;color:#eef7ff;overflow:auto}
+#ncaSubmissionSuccess.open{display:flex;flex-direction:column}
+.successBody{flex:1;display:flex;align-items:center;justify-content:center;padding:45px 22px}
+.successCard{width:min(850px,100%);text-align:center;padding:clamp(32px,6vw,70px);box-sizing:border-box;border:1px solid #245a91;border-radius:22px;background:#07111c;box-shadow:0 0 45px rgba(50,140,255,.12)}
+.successMark{width:72px;height:72px;margin:0 auto 22px;border-radius:50%;display:grid;place-items:center;background:#0d75e5;color:#fff;font-size:34px;font-weight:950}
+.successCard h1{font-size:clamp(34px,6vw,58px);margin:0 0 15px}.successCard p{color:#91a2b6;font-size:17px;line-height:1.7}
+.successBack{margin-top:22px;padding:14px 20px;border:1px solid #2a4b6c;border-radius:11px;background:#081522;color:#e5f1ff;font-weight:900;cursor:pointer}
+.subPaymentNote{color:#7f90a4;font-size:13px;line-height:1.6}
+
+.blikPayBtn{width:100%;margin-top:12px;padding:15px;border:1px solid #2468a9;border-radius:12px;background:#0b6fd3;color:#fff;font-weight:950;cursor:pointer}
+.blikInfo{display:none;margin-top:10px;padding:14px;border-radius:11px;border:1px solid #294963;background:#06111c;color:#9fb4c9;line-height:1.55}
+body{background:radial-gradient(circle at 18% 8%,rgba(31,113,205,.11),transparent 28%),radial-gradient(circle at 82% 32%,rgba(18,73,133,.08),transparent 30%),linear-gradient(180deg,#02060a,#050b12 48%,#02070c)!important;background-attachment:fixed!important}.blikCodeWrap{margin-top:14px;padding:18px;border:1px solid #29445f;border-radius:14px;background:linear-gradient(145deg,#07111b,#050a10)}.blikCodeWrap label{display:block;margin-bottom:9px;font-size:11px;font-weight:950;letter-spacing:1px;color:#9db3ca}.blikCodeWrap input{font-size:25px!important;letter-spacing:10px!important;text-align:center;font-weight:900}.blikCodeWrap small{display:block;margin-top:10px;color:#71869b;line-height:1.5}.successCard{position:relative;overflow:hidden;animation:ncaSuccessEnter .7s cubic-bezier(.18,.82,.25,1)}.successCard:before{content:"";position:absolute;inset:-40%;background:radial-gradient(circle,rgba(52,145,255,.16),transparent 42%);animation:ncaSuccessAura 2.4s ease-out forwards;pointer-events:none}.successMark{position:relative;animation:ncaSuccessCheck .65s .15s both cubic-bezier(.2,.9,.3,1.3)}.successSteps{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:25px 0;text-align:left}.successSteps div{padding:15px;border:1px solid #1f3850;border-radius:12px;background:#07111b}.successSteps b{display:block;color:#dcecff;margin-bottom:5px}.successSteps span{color:#7f93a8;font-size:13px;line-height:1.5}@keyframes ncaSuccessEnter{from{opacity:0;transform:translateY(22px) scale(.98)}to{opacity:1;transform:none}}@keyframes ncaSuccessCheck{from{opacity:0;transform:scale(.35) rotate(-18deg)}to{opacity:1;transform:scale(1)}}@keyframes ncaSuccessAura{0%{opacity:0;transform:scale(.7)}35%{opacity:1}100%{opacity:.35;transform:scale(1.2)}}@media(max-width:650px){.successSteps{grid-template-columns:1fr}}.packageBlock{margin-bottom:38px}.packageIntro{color:#8295aa;line-height:1.6;margin:-8px 0 18px}.packageGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.packageCard{position:relative;display:flex!important;flex-direction:column;gap:7px;padding:22px!important;border:1px solid #29415a;border-radius:16px;background:#050c14;cursor:pointer;transition:.2s}.packageCard:hover{transform:translateY(-2px);border-color:#3977b7}.packageCard input{position:absolute;top:16px;right:16px;width:auto!important}.packageName{font-size:12px;font-weight:950;letter-spacing:1.4px;color:#76b3ff}.packageCard strong{font-size:25px;color:#f1f7ff}.packageCard small{font-size:14px;color:#a8bad0}.packageCard em{font-style:normal;color:#718499;font-size:13px;line-height:1.45}.packageCard.featured{box-shadow:0 0 25px rgba(50,139,255,.09)}.packageCard.express{border-color:#31557c}@media(max-width:800px){.packageGrid{grid-template-columns:1fr}}
+#ncaSubmissionPage{background:
+ radial-gradient(circle at 18% 12%,rgba(210,25,45,.09),transparent 27%),
+ radial-gradient(circle at 82% 25%,rgba(25,105,190,.10),transparent 31%),
+ linear-gradient(155deg,#020509 0%,#07101a 48%,#03070c 100%)!important}
+.packageCard,.packageCard.featured,.packageCard.express{border:1.5px solid #c72b3c!important;box-shadow:0 0 18px rgba(199,43,60,.07)!important}
+.packageCard:hover{border-color:#ff4054!important;box-shadow:0 0 26px rgba(199,43,60,.14)!important}
+.packageName{color:#ff5263!important}
+#ncaSubmissionSuccess{background:
+ radial-gradient(circle at 50% 24%,rgba(36,128,225,.17),transparent 30%),
+ radial-gradient(circle at 15% 75%,rgba(199,43,60,.07),transparent 28%),
+ linear-gradient(160deg,#02060a,#07111b 52%,#020509)!important}
+
+.ncaInlineSuccess{display:none;position:relative;width:min(1050px,100%);margin:30px auto 80px;padding:clamp(30px,6vw,68px);box-sizing:border-box;text-align:center;border:1px solid #275c91;border-radius:24px;background:linear-gradient(155deg,#071523,#040a10 60%,#07111b);box-shadow:0 0 60px rgba(37,132,230,.16);overflow:hidden}
+.ncaInlineSuccess.show{display:block;animation:inlineSuccessIn .7s cubic-bezier(.18,.82,.25,1)}
+.ncaInlineSuccess .inlineSuccessGlow{position:absolute;inset:-45%;background:radial-gradient(circle,rgba(48,142,244,.20),transparent 39%);pointer-events:none;animation:inlineAura 2.2s ease-out forwards}
+.ncaInlineSuccess>*:not(.inlineSuccessGlow){position:relative}
+.successEyebrow{font-size:11px;font-weight:950;letter-spacing:1.8px;color:#6eb3ff;margin-bottom:12px}
+.ncaInlineSuccess h1{font-size:clamp(34px,6vw,58px);margin:0 0 16px}
+.ncaInlineSuccess .successLead{max-width:800px;margin:0 auto 25px;color:#a4b6c9;line-height:1.75;font-size:16px}
+.successWait{color:#9cb1c6;line-height:1.7;margin:24px auto;max-width:760px}
+@keyframes inlineSuccessIn{from{opacity:0;transform:translateY(25px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes inlineAura{from{opacity:0;transform:scale(.7)}40%{opacity:1}to{opacity:.4;transform:scale(1.2)}}
+</style></head><body id="top">
+<div class="ncaOverlay" id="ncaOverlay" onclick="closeNcaMenu()"></div>
+<aside class="ncaDrawer" id="ncaDrawer">
+  <div class="drawerLabel">NCA MENU</div>
+  <a href="#top" onclick="closeNcaMenu()">HOME</a>
+  <a href="#verify" onclick="closeNcaMenu()">WERYFIKACJA</a>
+  <a href="#nca-grading" onclick="closeNcaMenu()">NCA GRADING</a>
+  <a href="#process" onclick="closeNcaMenu()">JAK TO DZIAŁA</a>
+  <a href="#scale" onclick="closeNcaMenu()">SKALA OCEN</a>
+  <a href="#send-card" onclick="closeNcaMenu()">WYŚLIJ KARTĘ</a><a href="#contact" onclick="closeNcaMenu()">KONTAKT</a><a href="#faq" onclick="closeNcaMenu()">FAQ</a>
+</aside>
+<header><img src="data:image/png;base64,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" alt="NCA"><nav><a href="#verify">Weryfikacja</a><a href="#about">O NCA</a><a href="#grading">Standard gradingu</a><a href="#scale">Skala ocen</a><a href="#process">Jak to działa</a><a href="#contact">Kontakt</a></nav>
+<button class="ncaMenuBtn" id="ncaMenuBtn" type="button" aria-label="Otwórz menu" onclick="toggleNcaMenu()">
+  <span></span><span></span><span></span>
+</button>
+
+</header><main><section class="hero" id="verify"><div><div class="eyebrow">National Card Authenticator</div><h1>Certyfikacja, która nadaje kolekcji <span>rangę.</span></h1><p>NCA Grading łączy szczegółową ocenę kondycji, cyfrowy rejestr certyfikatów i prestiżową prezentację. Każdy egzemplarz otrzymuje unikalny numer seryjny, suboceny z dokładnością do 0,1 oraz wpis w NCA Population Report.</p><div class="search"><input id="serial" inputmode="numeric" placeholder="Wpisz numer certyfikatu, np. 1"><button onclick="verify()">WYSZUKAJ</button></div><div class="trust"><span>✓ Rejestr certyfikatów NCA</span><span>✓ Suboceny do 0,1</span><span>✓ Population Report</span><span>✓ Archiwum przodu i tyłu</span></div></div></section><section class="result" id="result"></section><section class="about" id="about"><div class="eyebrow">NCA GRADING</div><h2>Standard dla kolekcjonerów, którzy wymagają więcej.</h2><p class="lead">National Card Authenticator to prestiżowa marka gradingowa zbudowana wokół przejrzystości, spójności i jakości prezentacji kolekcjonerskiej. Certyfikat NCA nie kończy się na jednej liczbie — pokazuje pełny profil kondycji egzemplarza oraz jego miejsce w populacji ocenionych kart.</p><p>Każda karta przechodzi ocenę czterech kluczowych obszarów: centeringu, narożników, krawędzi i powierzchni. Wynik zapisywany jest z dokładnością do jednej dziesiątej, dzięki czemu dwie karty o podobnej ocenie końcowej mogą być porównane znacznie precyzyjniej. Cyfrowy rejestr pozwala następnie sprawdzić numer seryjny, dane karty, fotografie przodu i tyłu oraz aktualny raport populacji.</p><div class="features"><div class="feature"><b>Precyzja 0,1</b><p>Suboceny nie są ograniczone do pełnych liczb. NCA może wskazać np. Edges 9.4, Surface 9.7 czy Centering 9.8.</p></div><div class="feature"><b>Population Report</b><p>Rejestr pokazuje liczbę egzemplarzy danego wariantu ocenionych przez NCA i rozkład najwyższych ocen.</p></div><div class="feature"><b>Archiwum wizualne</b><p>Certyfikat może przechowywać zdjęcie awersu i rewersu, pomagając powiązać fizyczny egzemplarz z wpisem w bazie.</p></div></div><div id="grading" class="eyebrow">STANDARD NCA</div><h2>Ocena, którą można zrozumieć.</h2><p>NCA analizuje geometrię druku i centering, ostrość oraz zachowanie narożników, stan wszystkich krawędzi, a także powierzchnię pod kątem zarysowań, linii druku, wgnieceń i innych niedoskonałości. Ocena końcowa jest prezentowana wraz z subocenami, aby właściciel karty widział, co dokładnie wpłynęło na wynik.</p><div id="scale" class="eyebrow" style="margin-top:65px">SKALA NCA</div><h2>Od 1 do 10 PERFECT.</h2><p><b style="color:#efd174">10 PERFECT</b> jest najwyższym wyróżnieniem NCA. Poniżej znajduje się <b style="color:#79adff">10 GEM MINT</b> — wyjątkowo mocny egzemplarz, który może posiadać minimalną niedoskonałość uniemożliwiającą uzyskanie statusu PERFECT.</p><div class="scale"><span class="perfect">10 PERFECT</span><span class="gem">10 GEM MINT</span><span>9 MINT</span><span>8 NM-MT</span><span>7 NEAR MINT</span><span>6 EX-MT</span><span>5 EXCELLENT</span><span>4 VG-EX</span><span>3 VERY GOOD</span><span>2 GOOD</span><span>1 POOR</span></div></section></main>
+<section class="ncaExtras" id="nca-grading">
+  <div class="wrap">
+    <div class="eyebrow">NCA GRADING SERVICE</div>
+    <h2 class="extraTitle">Więcej niż sama ocena.</h2>
+    <p class="extraLead">Każdy certyfikat NCA łączy numer seryjny, ocenę, subgrades oraz archiwum zdjęć w jednym rekordzie kolekcjonerskim.</p>
+
+    <div class="featureGrid">
+      <div class="featureCard"><div class="featureIcon">01</div><h3>Weryfikacja 24/7</h3><p>Numer seryjny pozwala szybko sprawdzić rekord karty w bazie NCA.</p></div>
+      <div class="featureCard"><div class="featureIcon">02</div><h3>Archiwum karty</h3><p>Przód i tył karty są prezentowane razem z informacjami o certyfikacie.</p></div>
+      <div class="featureCard"><div class="featureIcon">03</div><h3>Population Report</h3><p>Sprawdź, ile kart otrzymało ocenę wyższą, taką samą lub niższą.</p></div>
+    </div>
+
+    <div id="process">
+      <div class="eyebrow">PROCES NCA</div>
+      <h2 class="extraTitle">Jak to działa?</h2>
+      <div class="steps">
+        <div class="step"><div class="stepNo">KROK 01</div><h3>Przyjęcie karty</h3><p>Karta otrzymuje indywidualny rekord i trafia do procesu weryfikacji.</p></div>
+        <div class="step"><div class="stepNo">KROK 02</div><h3>Ocena</h3><p>Analizowane są centering, corners, edges oraz surface zgodnie ze skalą NCA.</p></div>
+        <div class="step"><div class="stepNo">KROK 03</div><h3>Certyfikat</h3><p>Po zakończeniu gradingu karta otrzymuje numer seryjny i rekord w bazie.</p></div>
+      </div>
+    </div>
+
+    
+
+
+
+
+<section class="sendLanding" id="send-card">
+  <div class="sendLandingInner">
+    <div class="eyebrow">GRADING NCA</div>
+    <h2>Wyślij swoją kartę do oceny.</h2>
+    <p class="sendLandingLead">Profesjonalna ocena pomaga określić stan karty, udokumentować jej jakość i stworzyć czytelny rekord kolekcjonerski. Certyfikat NCA pokazuje ocenę końcową oraz szczegółowe subgrades, dzięki czemu łatwiej porównać egzemplarz i zachować informacje o jego stanie.</p>
+    <div class="sendWhy">
+      <div><b>Dokumentacja stanu</b><span>Ocena porządkuje informacje o centeringu, rogach, krawędziach i powierzchni.</span></div>
+      <div><b>Certyfikat karty</b><span>Karta otrzymuje własny rekord, który można później zweryfikować w bazie NCA.</span></div>
+      <div><b>Lepsza prezentacja</b><span>Grading daje kolekcjonerowi przejrzysty sposób prezentowania stanu swojego egzemplarza.</span></div>
+    </div>
+    <button class="sendPageBtn" type="button" onclick="openNcaSubmission()">OCEŃ KARTĘ W NCA</button>
+  </div>
+</section>
+
+<div id="contact" class="contactBox">
+      <div>
+        <div class="eyebrow">KONTAKT</div>
+        <h2>Masz pytanie do NCA?</h2>
+        <p>Napisz w sprawie gradingu, certyfikatu lub współpracy.</p>
+        <div class="ncaStatus"><span class="statusDot"></span>NCA Grading Service</div>
+      </div>
+      <div class="contactActions">
+        <a class="contactBtn contactPrimary" href="mailto:nca.grading.servicev@gmail.com?subject=NCA%20Grading%20-%20zapytanie">NAPISZ E-MAIL</a>
+        <button class="contactBtn contactSecondary" type="button" onclick="copyNcaMail(this)">KOPIUJ E-MAIL</button>
+      </div>
+    </div>
+<section class="faqNca" id="faq">
+  <div class="eyebrow" style="text-align:center">FAQ</div>
+  <h2>Najczęstsze pytania</h2>
+  <p>Najważniejsze informacje o certyfikatach i systemie NCA.</p>
+  <details><summary>Jak sprawdzić certyfikat NCA?</summary><p>Wpisz numer seryjny w polu weryfikacji i wybierz „WYSZUKAJ”. Jeśli rekord znajduje się w bazie, zobaczysz dane karty, ocenę, subgrades i zdjęcia.</p></details>
+  <details><summary>Co oznaczają subgrades?</summary><p>To osobne oceny czterech elementów karty: centering, corners, edges oraz surface. Pokazują dokładniej, z czego wynika końcowa ocena.</p></details>
+  <details><summary>Dlaczego certyfikatu może nie być w bazie?</summary><p>Jeśli karta została niedawno oceniona, jej rekord może być jeszcze przetwarzany. W takim przypadku spróbuj ponownie później.</p></details>
+  <details><summary>Co pokazuje Population Report?</summary><p>Pokazuje liczbę zarejestrowanych kart tego wariantu z oceną wyższą, taką samą oraz niższą.</p></details>
+</section>
+  </div>
+</section>
+
+<footer>© 2026 NCA Grading — National Card Authenticator. Digital Certificate Registry.</footer><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script>
+const SB=supabase.createClient('https://iwdbchfizkfkzrdcbtjq.supabase.co','sb_publishable_prvLYudXtQdsxm0dnMm4Gg_Hrl2CsCK');
+let current=null;
+function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+function showSide(side){
+ if(!current)return;
+ const url=side==='back'?current.back:current.front;
+ if(!url)return;
+ const p=document.getElementById('photo');p.src=url;p.alt=(side==='back'?'Tył':'Przód')+' karty '+current.name;
+ document.getElementById('photoFrame').className='cardPhoto'+(side==='back'?' backOnly':'');
+ document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('active'));
+ const b=document.getElementById(side+'Btn');if(b)b.classList.add('active');
+}
+function ncaLabel(d){return (d.grade_label||'').trim() || (Number(d.grade)===10?'GEM MINT':'');}
+function mapCert(d){return {
+ name:d.card_name||'Karta NCA', local:d.card_name||'Karta NCA', language:d.language||'—', year:d.year??'—', set:d.set_name||'—', number:d.card_number||'—', rarity:d.rarity||'—',
+ grade:d.grade??'—', label:ncaLabel(d), centering:d.centering??'—', corners:d.corners??'—', edges:d.edges??'—', surface:d.surface??'—', graded:d.graded_on||'—',
+ higher:d.population_higher??0, same:d.population_same??0, lower:d.population_lower??0, front:d.image_url||'', back:d.image_url_2||'', description:d.grading_notes||'Brak dodatkowych uwag gradingowych.'
+}}
+async function verify(){
+ const n=document.getElementById('serial').value.trim(),r=document.getElementById('result');
+ r.style.display='block';
+ if(!n){r.innerHTML='<div class="cert"><div class="error"><h2>Wpisz numer certyfikatu.</h2></div></div>';return}
+ r.innerHTML='<div class="cert"><div class="error"><div class="verified">NCA CERTIFICATE SEARCH</div><h2>Sprawdzanie certyfikatu...</h2></div></div>';
+ let data,error;
+ try{({data,error}=await SB.from('certificates').select('*').eq('cert_number',n).maybeSingle())}catch(e){error=e}
+ if(error||!data){current=null;r.innerHTML='<div class="cert"><div class="error"><div class="verified">NCA CERTIFICATE SEARCH</div><h2>Twoja karta nie została jeszcze dodana do bazy</h2><p style="color:#929eae">Nie znaleźliśmy certyfikatu #'+esc(n)+'.</p></div></div>';return}
+ const c=current=mapCert(data); const perfect=Number(c.grade)===10 && c.label.toUpperCase().includes('PERFECT');
+ const gradeColor=perfect?'#ffd86a':'#8fc2ff'; const sameLabel=perfect?'Ta sama ocena · 10 PERFECT':'Ta sama ocena';
+ // Certyfikat #1 (Machamp VMAX): celowo nie pokazujemy żadnych zdjęć, nawet jeśli stare URL-e nadal są w bazie.
+ const hidePhotosForMachamp=String(n).replace(/^0+/,'')==='1';
+ if(hidePhotosForMachamp){c.front='';c.back='';}
+ const photos=(c.front||c.back)?`<div class="sectionTitle">ARCHIWUM KARTY</div><div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:10px 0 22px">${c.front?`<div><div style="color:#748196;font-size:10px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:7px">PRZÓD</div><img src="${esc(c.front)}" alt="${esc(c.name)} — przód" style="display:block;width:100%;height:auto;border-radius:14px"></div>`:''}${c.back?`<div><div style="color:#748196;font-size:10px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:7px">TYŁ</div><img src="${esc(c.back)}" alt="${esc(c.name)} — tył" style="display:block;width:100%;height:auto;border-radius:14px"></div>`:''}</div>`:'';
+ // Jeśli certyfikat nie ma zdjęć, nie wyświetlamy żadnego komunikatu ani pustego pola.
+ const visual=(c.front||c.back)?`<div class="visual"><div class="tabs">${c.front?'<button id="frontBtn" class="active" onclick="showSide(\'front\')">PRZÓD KARTY</button>':''}${c.back?'<button id="backBtn" onclick="showSide(\'back\')">TYŁ KARTY</button>':''}</div><div class="cardPhoto" id="photoFrame"><img id="photo" src="${esc(c.front||c.back)}" alt="${esc(c.name)} — zdjęcie karty"></div></div>`:'';
+ r.innerHTML=`<div class="cert"><div class="certHead"><div><div class="verified">✓ NCA VERIFIED CERTIFICATE</div><div class="serial">SERIAL NO. ${esc(n)} · ACTIVE RECORD</div></div><div class="bigGrade" style="color:${gradeColor};text-shadow:0 0 22px rgba(255,196,45,.22)">${esc(c.grade)}<small style="color:${gradeColor}">${esc(c.label)}</small></div></div><div class="certBody">${visual}<div class="details"><div class="eyebrow">NCA CERTIFIED COLLECTIBLE</div><h2>${esc(c.name)}</h2><div class="blue">${esc(c.local)} · ${esc(c.language)}</div><div class="chips"><span class="chip">NCA #${esc(n)}</span><span class="chip">${esc(c.year)}</span><span class="chip">${esc(c.rarity)}</span><span class="chip">AUTHENTIC</span></div><div class="gridInfo"><div class="info"><span>Set</span><b>${esc(c.set)}</b></div><div class="info"><span>Card number</span><b>${esc(c.number)}</b></div><div class="info"><span>Language</span><b>${esc(c.language)}</b></div><div class="info"><span>Grading date</span><b>${esc(c.graded)}</b></div></div><div class="sectionTitle">NCA SUBGRADES</div><div class="subs"><div class="sub"><span>Centering</span><b>${esc(c.centering)}</b></div><div class="sub"><span>Corners</span><b>${esc(c.corners)}</b></div><div class="sub"><span>Edges</span><b>${esc(c.edges)}</b></div><div class="sub"><span>Surface</span><b>${esc(c.surface)}</b></div></div><div class="sectionTitle">GRADING NOTES</div><p>${esc(c.description)}</p>${photos}<div class="sectionTitle">NCA POPULATION POSITION</div><div class="population"><div class="pop gold"><span>Wyższa ocena</span><b>${esc(c.higher)}</b></div><div class="pop gold"><span>${sameLabel}</span><b>${esc(c.same)}</b></div><div class="pop"><span>Niższa ocena</span><b>${esc(c.lower)}</b></div></div>${perfect?'<div class="sectionTitle" style="color:#ffd86a">NCA 10 PERFECT</div><p>Ten egzemplarz otrzymał najwyższe wyróżnienie NCA — <b style="color:#ffd86a">10 PERFECT</b>.</p>':''}</div></div></div>`;
+ r.scrollIntoView({behavior:'smooth',block:'start'});
+}
+document.getElementById('serial').addEventListener('keydown',e=>{if(e.key==='Enter')verify()});
+const certFromUrl=new URLSearchParams(location.search).get('cert');if(certFromUrl){document.getElementById('serial').value=certFromUrl;verify()}
+
+function copyNcaMail(btn){
+  const mail='nca.grading.servicev@gmail.com';
+  if(navigator.clipboard && window.isSecureContext){
+    navigator.clipboard.writeText(mail).then(()=>{btn.textContent='SKOPIOWANO ✓';setTimeout(()=>btn.textContent='KOPIUJ E-MAIL',1800);});
+  }else{
+    const t=document.createElement('textarea');t.value=mail;document.body.appendChild(t);t.select();
+    try{document.execCommand('copy');btn.textContent='SKOPIOWANO ✓';setTimeout(()=>btn.textContent='KOPIUJ E-MAIL',1800);}catch(e){}
+    t.remove();
+  }
+}
+
+
+function toggleNcaMenu(){
+ const d=document.getElementById('ncaDrawer'),o=document.getElementById('ncaOverlay'),b=document.getElementById('ncaMenuBtn');
+ const on=!d.classList.contains('open');d.classList.toggle('open',on);o.classList.toggle('open',on);b.classList.toggle('open',on);
+ document.body.style.overflow=on?'hidden':'';
+}
+function closeNcaMenu(){
+ document.getElementById('ncaDrawer')?.classList.remove('open');
+ document.getElementById('ncaOverlay')?.classList.remove('open');
+ document.getElementById('ncaMenuBtn')?.classList.remove('open');
+ document.body.style.overflow='';
+}
+
+
+function addCertificateExtras(){
+  const result=document.getElementById('result');
+  if(!result || !current) return;
+  if(!result.querySelector('.shareNca')){
+    const b=document.createElement('button');
+    b.className='shareNca'; b.type='button'; b.textContent='UDOSTĘPNIJ CERTYFIKAT';
+    b.onclick=shareCertificate;
+    result.appendChild(b);
+  }
+}
+async function shareCertificate(){
+  const serial=document.getElementById('serial')?.value.trim() || '1';
+  const url=(location.protocol==='http:'||location.protocol==='https:') ? location.href.split('#')[0]+'#certificate-'+encodeURIComponent(serial) : '';
+  const data={title:'NCA Grading — Certyfikat #'+serial,text:'NCA Grading — certyfikat karty #'+serial};
+  if(url) data.url=url;
+  if(navigator.share){
+    try{await navigator.share(data);return;}catch(e){if(e.name==='AbortError')return;}
+  }
+  const copy=url || ('NCA Grading — certyfikat #'+serial);
+  try{
+    if(navigator.clipboard && window.isSecureContext) await navigator.clipboard.writeText(copy);
+    else{const t=document.createElement('textarea');t.value=copy;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove();}
+    const b=document.querySelector('.shareNca');if(b){b.textContent='SKOPIOWANO ✓';setTimeout(()=>b.textContent='UDOSTĘPNIJ CERTYFIKAT',1800);}
+  }catch(e){}
+}
+
+
+const ncaResultObserver=new MutationObserver(()=>{if(typeof current!=='undefined' && current){addCertificateExtras();applyNcaGradeColor();applyNcaReportGlow();}});
+const ncaResultNode=document.getElementById('result');
+if(ncaResultNode)ncaResultObserver.observe(ncaResultNode,{childList:true,subtree:true});
+
+
+function applyNcaGradeColor(){
+  const result=document.getElementById('result');
+  if(!result || !current) return;
+  const gradeText=String(current.grade||'').trim().toUpperCase();
+  const nodes=[...result.querySelectorAll('*')];
+  let target=null;
+  for(const el of nodes){
+    if(el.children.length===0 && el.textContent.trim().toUpperCase()===gradeText){target=el;break;}
+  }
+  if(!target) return;
+  target.classList.remove('gradePerfectGold','gradeTenBlue');
+  if(gradeText.includes('PERFECT')) target.classList.add('gradePerfectGold');
+  else if(/^10(?:\s|$)/.test(gradeText)) target.classList.add('gradeTenBlue');
+}
+
+
+function applyNcaReportGlow(){
+  const result=document.getElementById('result');
+  if(!result || !current) return;
+  result.classList.remove('ncaReportGlowBlue','ncaReportGlowGold');
+  const grade=String(current.grade||'').trim().toUpperCase();
+  void result.offsetWidth;
+  if(grade==='10 PERFECT') result.classList.add('ncaReportGlowGold');
+  else if(grade==='10 GEM MINT') result.classList.add('ncaReportGlowBlue');
+}
+
+
+
+
+document.getElementById('ncaSubmissionForm')?.addEventListener('submit',function(e){e.preventDefault();const f=new FormData(this),b=document.getElementById('sendSuccess');b.innerHTML='<b>Zgłoszenie przygotowane.</b><br>'+String(f.get('card')||'Karta')+' • '+String(f.get('shipping')||'InPost')+'<br>Zabezpiecz kartę i nadaj ją do wskazanego punktu odbioru NCA.';b.style.display='block';b.scrollIntoView({behavior:'smooth',block:'center'});});
+function openNcaSubmission(){const p=document.getElementById('ncaSubmissionPage');p.classList.add('open');p.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';history.pushState({ncaSubmission:true},'', '#wysylka');}
+function closeNcaSubmission(){const p=document.getElementById('ncaSubmissionPage');p.classList.remove('open');p.setAttribute('aria-hidden','true');document.body.style.overflow='';if(location.hash==='#wysylka')history.replaceState({},'',location.pathname+location.search);}
+window.addEventListener('popstate',()=>{if(location.hash!=='#wysylka'){const p=document.getElementById('ncaSubmissionPage');if(p){p.classList.remove('open');document.body.style.overflow='';}}});
+document.getElementById('ncaFullSubmission')?.addEventListener('submit',function(e){
+ e.preventDefault();
+ if(!this.checkValidity()){this.reportValidity();return;}
+ const p=document.getElementById('ncaSubmissionPage');
+ const s=document.getElementById('ncaSubmissionSuccess');
+ if(p){p.classList.remove('open');p.setAttribute('aria-hidden','true');}
+ if(s){s.classList.add('open');s.setAttribute('aria-hidden','false');s.scrollTop=0;}
+ document.body.style.overflow='hidden';
+ try{history.pushState({ncaSuccess:true},'','#wyslano');}catch(err){}
+});
+function returnFromSuccess(){
+ const s=document.getElementById('ncaSubmissionSuccess');
+ const p=document.getElementById('ncaSubmissionPage');
+ if(s){s.classList.remove('open');s.setAttribute('aria-hidden','true');}
+ if(p){p.classList.remove('open');p.setAttribute('aria-hidden','true');}
+ document.body.style.overflow='';
+ try{history.replaceState({},'',location.href.split('#')[0]+'#top');}catch(e){}
+ const top=document.getElementById('top'); if(top) top.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+document.addEventListener('DOMContentLoaded',function(){
+ const mb=document.querySelector('.ncaMenuBtn');
+ if(mb) mb.addEventListener('click',function(e){
+   e.preventDefault();
+   if(typeof openNcaMenu==='function') openNcaMenu();
+ });
+ const inp=document.getElementById('serial');
+ const sb=[...document.querySelectorAll('button')].find(b=>(b.textContent||'').trim().toUpperCase()==='WYSZUKAJ');
+ if(sb) sb.addEventListener('click',function(e){e.preventDefault();if(typeof verify==='function')verify();});
+ if(inp) inp.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();if(typeof verify==='function')verify();}});
+});
+
+
+
+document.addEventListener('DOMContentLoaded',function(){
+  const oldForm=document.getElementById('ncaFullSubmission');
+  if(!oldForm) return;
+  const cleanForm=oldForm.cloneNode(true);
+  oldForm.parentNode.replaceChild(cleanForm,oldForm);
+
+  cleanForm.addEventListener('submit',function(e){
+    if(!cleanForm.checkValidity()){
+      e.preventDefault();
+      cleanForm.reportValidity();
+      return false;
+    }
+    const btn=cleanForm.querySelector('.subSubmit');
+    if(btn){btn.disabled=true;btn.textContent='WYSYŁANIE ZGŁOSZENIA...';}
+    // Formularz jest wysyłany do FormSubmit, które przekazuje zgłoszenie na e-mail NCA.
+  });
+
+  // Po poprawnym wysłaniu FormSubmit wraca na stronę z ?submitted=1.
+  const params=new URLSearchParams(window.location.search);
+  if(params.get('submitted')==='1'){
+    const page=document.getElementById('ncaSubmissionPage');
+    const success=document.getElementById('ncaInlineSuccess');
+    if(page){page.classList.add('open');page.setAttribute('aria-hidden','false');}
+    document.body.style.overflow='hidden';
+    cleanForm.style.display='none';
+    const packageBlock=document.querySelector('#ncaSubmissionPage .packageBlock');
+    if(packageBlock) packageBlock.style.display='none';
+    if(success){success.classList.add('show');success.setAttribute('aria-hidden','false');}
+    try{history.replaceState({},'',window.location.pathname);}catch(_e){}
+  }
+
+  const home=document.getElementById('inlineHomeBtn');
+  if(home) home.addEventListener('click',function(){
+    const page=document.getElementById('ncaSubmissionPage');
+    const success=document.getElementById('ncaInlineSuccess');
+    if(success){success.classList.remove('show');success.setAttribute('aria-hidden','true');}
+    cleanForm.style.display='';
+    const packageBlock=document.querySelector('#ncaSubmissionPage .packageBlock');
+    if(packageBlock) packageBlock.style.display='';
+    if(page){page.classList.remove('open');page.setAttribute('aria-hidden','true');}
+    document.body.style.overflow='';
+    const top=document.getElementById('top');
+    if(top) top.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+});
+</script>
+<div id="ncaSubmissionPage" aria-hidden="true">
+  <div class="subPageTop"><div class="subPageBrand">NC<strong>A</strong></div><button class="subBack" type="button" onclick="closeNcaSubmission()">← WRÓĆ DO NCA</button></div>
+  <main class="subPageBody">
+    <div class="eyebrow">WYSYŁKA DO NCA</div><h1>Zgłoszenie karty</h1>
+    <p class="subIntro">Uzupełnij dane właściciela, adres zwrotny i informacje o karcie. Następnie wybierz sposób dostarczenia przesyłki do NCA.</p>
+    <form class="subForm" id="ncaFullSubmission" action="https://formsubmit.co/nca.grading.service@gmail.com" method="POST">
+<input type="hidden" name="_subject" value="Nowe zgłoszenie NCA Grading">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_next" value="https://ncagradingservice.github.io/NCA/?submitted=1">
+<input type="hidden" name="recipient" value="nca.grading.service@gmail.com">
+      <div class="packageBlock">
+<h3>Wybierz pakiet gradingu</h3>
+<p class="packageIntro">Wybierz tempo realizacji dla jednej karty. Podane terminy są szacunkowe i liczone od przyjęcia karty przez NCA.</p>
+<div class="packageGrid">
+<label class="packageCard"><input type="radio" name="gradingPackage" value="STANDARD — 70 zł — do 8 miesięcy" checked><span class="packageName">STANDARD</span><strong>70 zł / karta</strong><small>czas realizacji: do 8 miesięcy</small><em>Pełna ocena NCA, subgrades oraz certyfikat karty w bazie.</em></label>
+<label class="packageCard"><input type="radio" name="gradingPackage" value="PREMIUM — 99 zł — do 4 miesięcy"><span class="packageName">PREMIUM</span><strong>99 zł / karta</strong><small>czas realizacji: do 4 miesięcy</small><em>Wszystko ze Standard + szybsza kolejka i priorytetowa obsługa zgłoszenia.</em></label>
+<label class="packageCard"><input type="radio" name="gradingPackage" value="EXPRESS — 239 zł — do 1 miesiąca"><span class="packageName">EXPRESS</span><strong>239 zł / karta</strong><small>czas realizacji: do 1 miesiąca</small><em>Wszystko z Premium + najwyższy priorytet realizacji NCA.</em></label>
+</div></div>
+<h3>Dane właściciela i karty</h3><div class="subGrid">
+      <div><label>IMIĘ I NAZWISKO</label><input required name="name"></div><div><label>NUMER TELEFONU</label><input required type="tel" name="phone"></div>
+      <div class="full"><label>E-MAIL</label><input required type="email" name="email"></div>
+      <div><label>ULICA</label><input required name="street"></div><div><label>NR DOMU / MIESZKANIA</label><input required name="house"></div>
+      <div><label>KOD POCZTOWY</label><input required name="postal" placeholder="00-000"></div><div><label>MIASTO</label><input required name="city"></div>
+      <div class="full"><label>GRA / TCG</label><select name="tcg"><option>Pokémon</option><option>One Piece</option><option>Yu-Gi-Oh!</option><option>Magic: The Gathering</option><option>Inne</option></select></div>
+      
+      </div>
+      <h3 style="margin-top:35px">Płatność</h3>
+<div class="subShipping"><label class="subShip"><input type="radio" name="payment" value="BLIK na telefon +48 604 883 476" checked> BLIK na telefon</label></div>
+<div class="blikCodeWrap"><label>BLIK NA TELEFON</label><div style="font-size:25px;font-weight:950;letter-spacing:1px;color:#fff;margin:4px 0 8px">+48 604 883 476</div><small>W aplikacji bankowej wybierz „BLIK na telefon” i wyślij kwotę odpowiadającą wybranemu pakietowi. Nie wpisuj tutaj kodu BLIK. Płatność wykonujesz bezpośrednio w aplikacji swojego banku.</small></div>
+<h3 style="margin-top:35px">Wysyłka do NCA</h3><div class="subShipping">
+      <label class="subShip"><input type="radio" name="shipping" value="InPost Paczkomat" checked> InPost Paczkomat</label>
+      </div>
+      <div class="subReceiver"><b>Punkt odbioru NCA</b><br>Kardynała Aleksandra Kakowskiego 5, Warszawa<br>Paczkomat InPost</div>
+      <button class="subSubmit" type="submit">WYŚLIJ ZGŁOSZENIE</button><div class="subResult" id="subResult"></div>
+    </form>
+<div id="ncaInlineSuccess" class="ncaInlineSuccess" aria-hidden="true">
+  <div class="inlineSuccessGlow"></div>
+  <div class="successMark">✓</div>
+  <div class="successEyebrow">NCA GRADING · ZGŁOSZENIE PRZYJĘTE</div>
+  <h1>Twoje zgłoszenie zostało przyjęte.</h1>
+  <p class="successLead">Dziękujemy. Teraz oczekujemy na Twoją przesyłkę. Po jej otrzymaniu karta zostanie przypisana do zgłoszenia i przekazana do weryfikacji przez specjalistów NCA.</p>
+  <div class="successSteps">
+    <div><b>01 · Oczekujemy na przesyłkę</b><span>Wyślij kartę zgodnie z danymi podanymi w zgłoszeniu.</span></div>
+    <div><b>02 · Specjaliści NCA</b><span>Po otrzymaniu karty sprawdzimy zgłoszenie, stan przesyłki i przygotujemy kartę do procesu.</span></div>
+    <div><b>03 · Akceptacja i grading</b><span>Po akceptacji karta trafi do kolejki wybranego pakietu i rozpocznie się właściwa ocena NCA.</span></div>
+  </div>
+  <p class="successWait"><b>Na tym etapie poczekaj na przyjęcie przesyłki przez NCA.</b><br>Po jej przyjęciu zgłoszenie będzie gotowe do dalszej obsługi.</p>
+  <button class="successBack" type="button" id="inlineHomeBtn">WRÓĆ DO MENU · HOME</button>
+</div>
+
+  </main>
+</div>
+
+<div id="ncaSubmissionSuccess" aria-hidden="true">
+ <div class="subPageTop"><div class="subPageBrand">NC<strong>A</strong></div><button class="subBack" type="button" onclick="returnFromSuccess()">← WRÓĆ</button></div>
+ <div class="successBody"><div class="successCard"><div class="successMark">✓</div>
+<h1>Twoje zgłoszenie zostało przyjęte.</h1>
+<p class="successLead">Dziękujemy. Twoja karta została zgłoszona do procesu NCA Grading.</p>
+<div class="successSteps">
+ <div><b>01 · Oczekujemy na przesyłkę</b><span>Po dostarczeniu przesyłki przypiszemy kartę do Twojego zgłoszenia.</span></div>
+ <div><b>02 · Weryfikacja specjalistów</b><span>Specjaliści NCA sprawdzą zgłoszenie i zaakceptują kartę do procesu gradingu.</span></div>
+ <div><b>03 · Grading NCA</b><span>Po akceptacji karta trafi do właściwej kolejki zgodnej z wybranym pakietem.</span></div>
+</div>
+<p><b>Na tym etapie poczekaj na przyjęcie przesyłki i dalszą informację od NCA.</b></p>
+<p class="mailStatus">Zgłoszenia są wysyłane na: <b>nca.grading.service@gmail.com</b></p>
+<button class="successBack" type="button" onclick="returnFromSuccess()">WRÓĆ DO MENU · HOME</button></div></div>
+</div>
+</body></html>
